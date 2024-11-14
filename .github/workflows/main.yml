@@ -1,0 +1,28 @@
+name: CI  
+
+on:       
+  push:   
+    branches:
+      - main  
+
+jobs:      
+  build:   
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  
+
+      - name: Node 
+        uses: actions/setup-node@v3
+        with: 
+            node-version: '18.x'
+
+      - name: List project files
+        run: ls -la 
+
+    #to dla pliku json
+    #   - name: Installing depedencies
+    #     run: npm ci
+
+
